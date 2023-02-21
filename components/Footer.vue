@@ -1,9 +1,13 @@
 <template>
-    <footer class="bg-gray-200">
+    <footer>
         <div class="container m-auto p-10">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <div class="items-center">
-                    <h3 class="text-1xl font-bold header-100">Logo</h3>
+                    <img
+                        class="block h-8 w-auto"
+                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                        alt="Your Company"
+                    />
                 </div>
                 <div>
                     <h3 class="text-1xl font-bold header-100">Company</h3>

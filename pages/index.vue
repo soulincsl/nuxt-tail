@@ -11,15 +11,7 @@
                             width="20"
                             height="20"
                             fill="currentColor"
-                            class="
-                                absolute
-                                left-3
-                                top-1/2
-                                -mt-2.5
-                                text-slate-400
-                                pointer-events-none
-                                group-focus-within:text-blue-500
-                            "
+                            class="absolute left-3 top-1/2 -mt-2.5 text-slate-400 pointer-events-none group-focus-within:text-blue-500"
                             aria-hidden="true"
                         >
                             <path
@@ -29,22 +21,7 @@
                             />
                         </svg>
                         <input
-                            class="
-                                focus:ring-2
-                                focus:ring-blue-500
-                                focus:outline-none
-                                appearance-none
-                                w-full
-                                text-sm
-                                leading-6
-                                text-slate-900
-                                placeholder-slate-400
-                                rounded-md
-                                py-2
-                                pl-10
-                                ring-1 ring-slate-200
-                                shadow-sm
-                            "
+                            class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
                             type="text"
                             aria-label="Search filter"
                             placeholder="Search a place..."
@@ -59,7 +36,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 mt-5">
                 <div v-for="n in 10" :key="n" class="mt-5">
                     <div>
-                        <a href="/" class="w-full block">
+                        <a href="/detail" class="w-full block">
                             <div class="relative">
                                 <img
                                     class="w-full"
@@ -73,14 +50,7 @@
                             Stay
                         </a>
                         <a
-                            class="
-                                block
-                                w-full
-                                text-lg
-                                font-semibold
-                                leading-tight
-                                mt-2
-                            "
+                            class="block w-full text-lg font-semibold leading-tight mt-2"
                             href="/"
                             >Luangprabang {{ n }}</a
                         >
@@ -96,7 +66,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 mt-5">
                 <div v-for="n in 10" :key="n" class="mt-5">
                     <div>
-                        <a href="/" class="w-full block">
+                        <a href="/detail" class="w-full block">
                             <div class="relative">
                                 <img
                                     class="w-full"
@@ -110,14 +80,7 @@
                             Stay
                         </a>
                         <a
-                            class="
-                                block
-                                w-full
-                                text-lg
-                                font-semibold
-                                leading-tight
-                                mt-2
-                            "
+                            class="block w-full text-lg font-semibold leading-tight mt-2"
                             href="/"
                             >Luangprabang {{ n }}</a
                         >
