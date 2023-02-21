@@ -15,7 +15,7 @@
                                     <a
                                         class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px text-blue-500 border-current"
                                         href="/docs/installation"
-                                        >Tailwind CLI</a
+                                        >Overview</a
                                     >
                                 </h2>
                             </li>
@@ -24,7 +24,7 @@
                                     <a
                                         class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px text-slate-900 border-transparent hover:border-slate-300 dark:text-slate-200 dark:hover:border-slate-700"
                                         href="/docs/installation/"
-                                        >Using PostCSS</a
+                                        >Room</a
                                     >
                                 </h2>
                             </li>
@@ -37,7 +37,6 @@
                 class="relative z-10 max-w-3xl mb-16 prose prose-slate dark:prose-dark"
                 bis_skin_checked="1"
             >
-                <h3 class="sr-only">Installing Tailwind CLI</h3>
                 <p>
                     The simplest and fastest way to get up and running with
                     Tailwind CSS from scratch is with the Tailwind CLI tool. The

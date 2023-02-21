@@ -20,6 +20,7 @@
                         />
                     </svg>
                     <input
+                        v-model="q"
                         class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
                         type="text"
                         aria-label="Search filter"
@@ -48,30 +49,16 @@
                         <ul
                             class="border-b border-slate-200 space-x-6 flex whitespace-nowrap dark:border-slate-200/5"
                         >
-                            <li>
+                            <li v-for="(item, index) in tabs" :key="index">
                                 <h2>
                                     <a
-                                        class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px text-blue-500 border-current"
-                                        href="/docs/installation"
-                                        >All</a
-                                    >
-                                </h2>
-                            </li>
-                            <li>
-                                <h2>
-                                    <a
-                                        class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px text-slate-900 border-transparent hover:border-slate-300 dark:text-slate-200 dark:hover:border-slate-700"
-                                        href="/docs/installation/"
-                                        >Stay</a
-                                    >
-                                </h2>
-                            </li>
-                            <li>
-                                <h2>
-                                    <a
-                                        class="flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px text-slate-900 border-transparent hover:border-slate-300 dark:text-slate-200 dark:hover:border-slate-700"
-                                        href="/docs/installation/"
-                                        >Restaurant</a
+                                        :class="`flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px ${
+                                            item.value === tab
+                                                ? 'text-blue-500 border-current'
+                                                : 'text-slate-900 border-transparent hover:border-slate-300'
+                                        }`"
+                                        :href="`/search?q=${q}&tab=${item.value}`"
+                                        >{{ item.name }}</a
                                     >
                                 </h2>
                             </li>
@@ -84,14 +71,15 @@
                 class="relative z-10 max-w-3xl mb-16 prose prose-slate dark:prose-dark"
                 bis_skin_checked="1"
             >
-                <h3 class="sr-only">Installing Tailwind CLI</h3>
-                <p>
-                    The simplest and fastest way to get up and running with
-                    Tailwind CSS from scratch is with the Tailwind CLI tool. The
-                    CLI is also available as a
-                    <a href="/blog/standalone-cli">standalone executable</a> if
-                    you want to use it without installing Node.js.
-                </p>
+                <div v-if="tab === '1'">
+                    <h1>All content</h1>
+                </div>
+                <div v-if="tab === '2'">
+                    <h1>All Stay</h1>
+                </div>
+                <div v-if="tab === '3'">
+                    <h1>All Restaurant</h1>
+                </div>
             </div>
         </section>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -152,3 +140,17 @@
         </div>
     </div>
 </template>
+
+<script setup>
+const route = useRoute();
+const tab = ref(route.query.tab ? route.query.tab : "1");
+const q = ref(route.query.q ? route.query.q : null);
+const tabs = ref([
+    {
+        name: "All",
+        value: "1",
+    },
+    { name: "Stay", value: "2" },
+    { name: "Restaurant", value: "3" },
+]);
+</script>
