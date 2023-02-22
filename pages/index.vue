@@ -33,7 +33,7 @@
 
         <section class="container m-auto mt-5 mb-10">
             <h2 class="text-3xl font-bold header-200">Top Destination</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 mt-5">
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-5">
                 <div
                     v-for="n in 10"
                     :key="n"
@@ -67,7 +67,7 @@
             <h2 class="text-3xl font-bold header-200">
                 Recommended places to stay for your next trip!
             </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-5 gap-2 mt-5">
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-5">
                 <div
                     v-for="n in 10"
                     :key="n"
