@@ -29,19 +29,6 @@
                 </form>
             </div>
         </div>
-        <div class="soulin">Hello, Soulin</div>
-        <div class="flex">
-            <button
-                class="bg-blue-500 px-12 py-2 mr-1 border rounded-full text-white"
-            >
-                All
-            </button>
-            <button
-                class="bg-white px-12 py-2 mr-1 transition duration-150 rounded-full text-blue-500 border hover:bg-blue-500 hover:text-white"
-            >
-                Stay
-            </button>
-        </div>
         <section class="mb-16 relative">
             <div class="relative z-10">
                 <div class="flex overflow-auto mb-6 -mx-4 sm:-mx-6">
@@ -50,16 +37,15 @@
                             class="border-b border-slate-200 space-x-6 flex whitespace-nowrap dark:border-slate-200/5"
                         >
                             <li v-for="(item, index) in tabs" :key="index">
-                                <h2>
-                                    <a
-                                        :class="`flex text-sm leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px ${
-                                            item.value === tab
-                                                ? 'text-blue-500 border-current'
-                                                : 'text-slate-900 border-transparent hover:border-slate-300'
-                                        }`"
-                                        :href="`/search?q=${q}&tab=${item.value}`"
-                                        >{{ item.name }}</a
-                                    >
+                                <h2
+                                    :class="`flex text-sm cursor-pointer leading-6 font-semibold pt-3 pb-2.5 border-b-2 -mb-px ${
+                                        item.value === tab
+                                            ? 'text-blue-500 border-current'
+                                            : 'text-slate-900 border-transparent hover:border-slate-300'
+                                    }`"
+                                    @click="onTab(item.value)"
+                                >
+                                    {{ item.name }}
                                 </h2>
                             </li>
                         </ul>
@@ -143,6 +129,7 @@
 
 <script setup>
 const route = useRoute();
+const router = useRouter();
 const tab = ref(route.query.tab ? route.query.tab : "1");
 const q = ref(route.query.q ? route.query.q : null);
 const tabs = ref([
@@ -153,4 +140,14 @@ const tabs = ref([
     { name: "Stay", value: "2" },
     { name: "Restaurant", value: "3" },
 ]);
+const onTab = (input) => {
+    tab.value = input;
+    router.push({
+        path: `/search`,
+        query: {
+            q: router.query.q,
+            tab: input,
+        },
+    });
+};
 </script>
