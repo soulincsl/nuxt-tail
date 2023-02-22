@@ -3,7 +3,7 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			charset: 'utf8',
-			viewport: 'width=device, initial-scale=1',
+			viewport: 'width=device-width, initial-scale=1',
 			title: 'Nuxt 3 with tailwind CSS',
 			meta: [
 				{ name: 'description', content: 'My Amazing site...' },

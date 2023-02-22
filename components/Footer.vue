@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="container m-auto p-10">
+        <div class="container m-auto p-10 border-t-4">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
                 <div class="items-center">
                     <img

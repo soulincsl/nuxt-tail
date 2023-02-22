@@ -37,7 +37,7 @@
                 All
             </button>
             <button
-                class="bg-white px-12 py-2 mr-1 rounded-full text-blue-500 border hover:bg-blue-500 hover:text-white"
+                class="bg-white px-12 py-2 mr-1 transition duration-150 rounded-full text-blue-500 border hover:bg-blue-500 hover:text-white"
             >
                 Stay
             </button>
@@ -87,7 +87,7 @@
                 <div
                     v-for="n in 5"
                     :key="n"
-                    class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-full my-2 md:hover:shadow-xl"
+                    class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden transition duration-150 md:max-w-full my-2 md:hover:shadow-xl"
                 >
                     <div class="md:flex">
                         <div class="md:shrink-0">
