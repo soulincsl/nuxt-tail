@@ -145,7 +145,7 @@ const onTab = (input) => {
     router.push({
         path: `/search`,
         query: {
-            q: router.query.q,
+            ...route.query,
             tab: input,
         },
     });
