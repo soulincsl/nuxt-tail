@@ -6,7 +6,10 @@
                     <div>
                         <h2>Where you want to go?</h2>
                     </div>
-                    <form class="group relative my-2">
+                    <form
+                        class="group relative my-2"
+                        @submit.prevent="onSearch"
+                    >
                         <svg
                             width="20"
                             height="20"
@@ -21,6 +24,7 @@
                             />
                         </svg>
                         <input
+                            v-model="searchModel"
                             class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-10 ring-1 ring-slate-200 shadow-sm"
                             type="text"
                             aria-label="Search filter"
@@ -98,3 +102,16 @@
         </section>
     </div>
 </template>
+<script setup>
+const router = useRouter();
+const searchModel = ref();
+
+const onSearch = () => {
+    router.push({
+        path: "/search",
+        query: {
+            q: searchModel.value,
+        },
+    });
+};
+</script>
