@@ -1,6 +1,13 @@
 <template>
     <div>
         <div class="container m-auto px-2">
+            <form @submit.prevent="postData">
+                <input
+                    type="file"
+                    @change="(e) => (file = e.target.files[0])"
+                />
+                <button type="submit">Test</button>
+            </form>
             <div class="grid grid-cols-1 sm:grid-cols-12 gap-2 my-20">
                 <div class="sm:col-start-2 sm:col-span-10">
                     <div>
@@ -105,6 +112,7 @@
 <script setup>
 const router = useRouter();
 const searchModel = ref();
+const file = ref();
 
 const onSearch = () => {
     router.push({
@@ -113,5 +121,18 @@ const onSearch = () => {
             q: searchModel.value,
         },
     });
+};
+const postData = () => {
+    const formData = new FormData();
+    console.log("postData", file.value);
+    formData.append("file", file.value);
+    const data = $fetch("http://192.168.40.124:3001/api/user", {
+        method: "POST",
+        // headers: {
+        //     "content-type": "multipart/form-data",
+        // },
+        body: formData,
+    });
+    console.log("data:", data);
 };
 </script>
